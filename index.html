@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+	<!-- meta data -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+
+	<!--font-family-->
+	 <link
+		href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet"> 
+
+
+		
+	<!-- title of site -->
+	<title>Bon Voyage | This is how we travel</title>
+
+	<!-- For favicon png -->
+	<link rel="shortcut icon" type="image/icon" href="assets/logo/title-logo.png" />
+
+	<!--font-awesome.min.css-->
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+	<!--linear icon css-->
+	<link rel="stylesheet" href="assets/css/linearicons.css">
+
+	<!--animate.css-->
+	<link rel="stylesheet" href="assets/css/animate.css">
+
+	<!--flaticon.css-->
+	<link rel="stylesheet" href="assets/css/flaticon.css">
+
+	<!--slick.css-->
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/slick-theme.css">
+
+	<!--bootstrap.min.css-->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<!-- bootsnav -->
+	<link rel="stylesheet" href="assets/css/bootsnav.css">
+
+	<!--style.css-->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!--responsive.css-->
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+</head>
+
+
+
+
+<body>
+
+	<!--header-top start -->
+	<header id="header-top" class="header-top">
+		<ul>
+			<li>
+				<div class="select-opt">
+					<label for="fromCurrency">From:</label>
+					<select id="fromCurrency">
+						<option value="AUD">AUD</option>
+						<option value="KRW">KRW</option>
+						<option value="VND">VND</option>
+					  <option value="USD">USD</option>
+					  <option value="EUR">EUR</option>
+					  <option value="JPY">JPY</option>
+					  <option value="GBP">GBP</option>
+					  <!-- Add more currencies as needed -->
+					</select>
+				  
+					<input type="number" id="amount" placeholder="Enter amount">
+				  
+					<label for="toCurrency">To:</label>
+					<select id="toCurrency">
+					<option value="VND">VND</option>
+					<option value="KRW">KRW</option>
+					<option value="AUD">AUD</option>
+					  <option value="USD">USD</option>
+					  <option value="EUR">EUR</option>
+					  <option value="JPY">JPY</option>
+					  <option value="GBP">GBP</option>
+					  <!-- Add more currencies as needed -->
+					</select>
+				  
+					<button onclick="convertCurrency()">Convert</button>
+				  
+					<h3>Result:</h3>
+					<div id="result"></div>
+				  
+					<script>
+						function convertCurrency() {
+						  const exchangeRates = {
+							AUD: {
+							  USD: 0.73,
+							  EUR: 0.65,
+							  JPY: 81.42,
+							  GBP: 0.61,
+							  KRW: 1346.45,
+							  VND: 18656.43
+							  // Add more exchange rates as needed
+							},
+							VND: {
+							  USD: 0.000044,
+							  EUR: 0.000037,
+							  JPY: 0.0056,
+							  GBP: 0.000035,
+							  KRW: 0.060,
+							  AUD: 0.000054
+							  // Add more exchange rates as needed
+							},
+							KRW: {
+							  USD: 0.00084,
+							  EUR: 0.00075,
+							  JPY: 0.094,
+							  GBP: 0.00069,
+							  AUD: 0.00074,
+							  VND: 16.51
+							  // Add more exchange rates as needed
+							},
+							USD: {
+							  EUR: 0.85,
+							  JPY: 113.61,
+							  GBP: 0.75,
+							  KRW: 1195.50,
+							  AUD: 1.37,
+							  VND: 22942.50
+							  // Add more exchange rates as needed
+							},
+							EUR: {
+							  USD: 1.18,
+							  JPY: 133.77,
+							  GBP: 0.88,
+							  KRW: 1340.60,
+							  AUD: 1.54,
+							  VND: 27124.89
+							  // Add more exchange rates as needed
+							},
+							JPY: {
+							  USD: 0.0088,
+							  EUR: 0.0075,
+							  GBP: 0.0066,
+							  KRW: 10.57,
+							  AUD: 0.012,
+							  VND: 178.20
+							  // Add more exchange rates as needed
+							},
+							GBP: {
+							  USD: 1.33,
+							  EUR: 1.13,
+							  JPY: 151.74,
+							  KRW: 1439.97,
+							  AUD: 1.64,
+							  VND: 28950.93
+							  // Add more exchange rates as needed
+							}									
+						  };
+					
+				  
+						const fromCurrency = document.getElementById("fromCurrency").value;
+						const toCurrency = document.getElementById("toCurrency").value;
+						const amount = document.getElementById("amount").value;
+				  
+						const rate = exchangeRates[fromCurrency][toCurrency];
+						const convertedAmount = amount * rate;
+				  
+						document.getElementById("result").innerText = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${toCurrency}`;
+					  }
+					</script>
+				</div>
+
+
+			</li>
+			<li class="head-responsive-right pull-right">
+				<div class="header-top-right">
+					<ul>
+
+						<li class="header-top-contact">
+							<a href="/Final/assets/account/account.html">Login/Sign up</a>
+						</li>
+
+		
+					</ul>
+				</div>
+			</li>
+		</ul>
+
+		
+	</header><!--/.header-top-->
+	<!--header-top end -->
+
+
+
+
+	<!-- top-area Start -->
+	<section class="top-area">
+		<div class="header-area">
+			<!-- Start Navigation -->
+			<nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy" data-minus-value-desktop="70"
+				data-minus-value-mobile="55" data-speed="1000">
+
+				<div class="container">
+
+					<!-- Start Header Navigation -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+							<i class="fa fa-bars"></i>
+						</button>
+						<a class="navbar-brand" href="index.html">Bon<span>Voyage</span></a>
+
+					</div><!--/.navbar-header-->
+					<!-- End Header Navigation -->
+
+
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+						<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+							<li class="chat-gpt"><a href="/Final/chatgpt/index.html">SMART TRAVELLER</a></li>
+							<li class=" scroll active"><a href="#explore">EXPLORE</a></li>
+							<li class="scroll"><a href="#inspiration">INSPIRATION</a></li>
+							<li class="scroll"><a href="#contact">CONTACT</a></li>
+			
+						</ul><!--/.nav -->
+					</div><!-- /.navbar-collapse -->
+				</div><!--/.container-->
+			</nav><!--/nav-->
+			<!-- End Navigation -->
+		</div><!--/.header-area-->
+		<div class="clearfix"></div>
+
+	</section><!-- /.top-area-->
+	<!-- top-area End -->
+
+
+
+
+
+	<!--welcome-hero start -->
+	<section id="home" class="welcome-hero">
+		<div class="container">
+			<div class="welcome-hero-txt">
+				<h2>“Do not follow where the path may lead. Go instead where there is no path and leave a trail.”</h2><p>- Ralph Waldo Emerson"</p>
+			</div>
+
+		</div>
+
+	</section><!--/.welcome-hero-->
+	<!--welcome-hero end -->
+
+
+
+
+
+
+			<!--list-topics start -->
+			<section id="list-topics" class="list-topics">
+				<div class="container">
+					<div class="list-topics-content">
+						<ul>
+							<li>
+								<div class="single-list-topics-content">
+									<div class="single-list-topics-icon">
+										<i class="flaticon-restaurant"></i>
+									</div>
+									<h2><a target="_blank" href="https://www.opentable.com.au/metro/sydney-restaurants">restaurent</a></h2>
+								</div>
+							</li>
+
+
+							<li>
+								<div class="single-list-topics-content">
+									<div class="single-list-topics-icon">
+										<i class="flaticon-travel"></i>
+									</div>
+									<h2><a target="_blank" href="https://dealsaway.com/?utm_source=adwords&utm_medium=cpc&utm_campaign=google-nonbranded-au&ads_cmpid=17509267833&ads_adid=136648701783&ads_matchtype=e&ads_network=g&ads_creative=605926830893&ads_targetid=kwd-24760412&utm_term=travel%20deals&gclid=Cj0KCQiAjMKqBhCgARIsAPDgWlw2MO5jU6mvKi2qMTDUbAqdf774hr7kHD6yuxFmFA6FIBnmjrbXiZkaAo35EALw_wcB">destination</a></h2>
+								</div>
+							</li>
+
+
+							<li>
+								<div class="single-list-topics-content">
+									<div class="single-list-topics-icon">
+										<i class="flaticon-building"></i>
+									</div>
+									<h2><a target="_blank" href="https://www.expedia.com.au/deals?locale=en_AU&siteid=25&semcid=AU.UB.GOOGLE.GT-c-EN.HOTEL&semdtl=a114387921891.b1129182638231.g1kwd-260516951.e1c.m1Cj0KCQiAjMKqBhCgARIsAPDgWlyTGZmnKMicbD0mKJscCjJq8y_zThCXzbeaSouzdsymybit_VJ71EcaAv9gEALw_wcB.r1666a20b0dc47b0ae9465076c0f04b9c3899db568967dea2ee41ab63136c55075.c1.j19071791.k1.d1624322631004.h1e.i1.l1.n1.o1.p1.q1.s1.t1.x1.f1.u1.v1.w1&gclid=Cj0KCQiAjMKqBhCgARIsAPDgWlyTGZmnKMicbD0mKJscCjJq8y_zThCXzbeaSouzdsymybit_VJ71EcaAv9gEALw_wcB">stays</a></h2>
+								</div>
+							</li>
+
+
+							
+						</ul>
+					</div>
+				</div><!--/.container-->
+	
+			</section><!--/.list-topics-->
+			<!--list-topics end-->
+
+
+
+	<!--EXPLORE start -->
+	<section id="explore" class="explore">
+		<div class="container">
+			<div class="section-header">
+				<h2>explore</h2>
+				<p>“The first condition of understanding a foreign country is to smell it.”</p>
+				<p>– Rudyard Kipling</p>
+			</div><!--/.section-header-->
+
+			<!-- JEJU ISLAND -->
+			<div class="explore-content">
+				<div class="row">
+					<div class=" col-md-4 col-sm-6">
+						<div class="single-explore-item">
+							<div class="single-explore-img">
+								<img src="assets/images/explore/jeju.jpg" alt="jeju-island image">
+								<div class="single-explore-img-info">
+									<button onclick="window.location.href='#'">best rated</button>
+									<div class="single-explore-image-icon-box">
+										<ul>
+											<li>
+												<div class="single-explore-image-icon">
+													<i class="fa fa-arrows-alt"></i>
+												</div>
+											</li>
+											<li>
+												<div class="single-explore-image-icon">
+													<i class="fa fa-bookmark-o"></i>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="single-explore-txt bg-theme-1">
+								<h2><a target="_blank" href="https://www.roughguides.com/south-korea/jeju-island/">Walking around the Lava island, Jeju</a></h2>
+								
+								<p class="explore-rating-price">
+									<span class="explore-rating">5.0</span>
+									<span class="explore-price-box">
+										form
+										<span class="explore-price">$2000-$5000</span>
+									</span>
+									<a href="#">destination</a>
+								</p>
+								<div class="explore-person">
+									<div class="row">
+										<div class="col-sm-2">
+											<div class="explore-person-img">
+												<a href="#">
+													<img src="assets/images/person/person.png" alt="JeJu island">
+												</a>
+											</div>
+										</div>
+										<div class="col-sm-10">
+											<p>
+												The mass of islands draping off Korea’s southern coast fades into the Pacific, before coming to an enigmatic conclusion in the crater-pocked JEJU ISLAND, known locally as Jejudo. This tectonic pimple in the South Sea is the country’s number-one holiday destination.
+											</p>
+										</div>
+									</div>
+								</div>
+								<!-- JEJU ISLAND FINISHED-->
+
+
+								<!-- MUSEUM -->
+								<div class="explore-open-close-part">
+									<div class="row">
+										<div class="col-sm-5">
+											<button class="close-btn open-btn" onclick="window.location.href='#'">open
+												now</button>
+										</div>
+										<div class="col-sm-7">
+											<div class="explore-map-icon">
+												<a href="#"><i data-feather="map-pin"></i></a>
+												<a href="#"><i data-feather="upload"></i></a>
+												<a href="#"><i data-feather="heart"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="single-explore-item">
+							<div class="single-explore-img">
+								<img src="assets/images/explore/museum-europe.jpg" alt="mueum in Europe">
+								<div class="single-explore-img-info">
+									<button onclick="window.location.href='#'">featured</button>
+									<div class="single-explore-image-icon-box">
+										<ul>
+											<li>
+												<div class="single-explore-image-icon">
+													<i class="fa fa-arrows-alt"></i>
+												</div>
+											</li>
+											<li>
+												<div class="single-explore-image-icon">
+													<i class="fa fa-bookmark-o"></i>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="single-explore-txt bg-theme-2">
+								<h2><a target="_blank" href="https://www.europeanbestdestinations.com/top/best-museums-in-europe/">Best Museum in Europes</a></h2>
+								<p class="explore-rating-price">
+									<span class="explore-rating">4.5</span>
+									<span class="explore-price-box">
+										form
+										<span class="explore-price">0$-100$</span>
+									</span>
+									<a href="#">hotel</a>
+								</p>
+								<div class="mexplore-person">
+									<div class="row">
+										<div class="col-sm-2">
+											<div class="explore-person-img">
+												<a href="#">
+													<img src="assets/images/person/person2.jpg" alt="BonVoyage journalist">
+												</a>
+											</div>
+										</div>
+										<div class="col-sm-10">
+											<p>
+												Europe is one of the best tourist destinations to discover among the most beautiful museums in the world. Here is a selection of the best museums in Europe, the must see museums which tell us to discover the history of our civilization from the first fossils to contemporary art...
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="explore-open-close-part">
+									<div class="row">
+										<div class="col-sm-5">
+											<button class="close-btn open-btn" onclick="window.location.href='#'">open
+												now</button>
+										</div>
+										<div class="col-sm-7">
+											<div class="explore-map-icon">
+												<a href="#"><i data-feather="map-pin"></i></a>
+												<a href="#"><i data-feather="upload"></i></a>
+												<a href="#"><i data-feather="heart"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- MUSEUM FINISHED-->
+
+					<!-- VIETNAM -->
+					<div class="col-md-4 col-sm-6">
+						<div class="single-explore-item">
+							<div class="single-explore-img">
+								<img src="assets/images/explore/vietnam.jpg" alt="explore image">
+								<div class="single-explore-img-info">
+									<button onclick="window.location.href='#'">best rated</button>
+									<div class="single-explore-image-icon-box">
+										<ul>
+											<li>
+												<div class="single-explore-image-icon">
+													<i class="fa fa-arrows-alt"></i>
+												</div>
+											</li>
+											<li>
+												<div class="single-explore-image-icon">
+													<i class="fa fa-bookmark-o"></i>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="single-explore-txt bg-theme-3">
+								<h2><a target="_blank" href="https://www.intrepidtravel.com/au/vietnam?gclid=47cec69cbbd11a08c8eaa3cdc46c5804&gclsrc=3p.ds&msclkid=47cec69cbbd11a08c8eaa3cdc46c5804&utm_source=bing&utm_medium=cpc&utm_campaign=2308_ANZ_AU_Booking_BAU_Search_Microsoft_Core_South-Eastern%20Asia__Non%20Brand_DSA&utm_term=https%3A%2F%2Fwww.intrepidtravel.com%2Fau%2Fvietnam&utm_content=Vietnam">Vietnam Tour and Holiday</a></h2>
+								<p class="explore-rating-price">
+									<span class="explore-rating">5.0</span>
+									<span class="explore-price-box">
+										form
+										<span class="explore-price">$2000-$5000</span>
+									</span>
+									<a href="#">destination</a>
+								</p>
+								<div class="explore-person">
+									<div class="row">
+										<div class="col-sm-2">
+											<div class="explore-person-img">
+												<a href="#">
+													<img src="assets/images/person/person3.jpg" alt="BonVoyage journalist">
+												</a>
+											</div>
+										</div>
+										<div class="col-sm-10">
+											<p>
+												Wherever we travel, it’s the flavours we remember best. A crusty bánh mì or streetside pho, seafood cù lao hotpots and (scarily addictive) coffee with condensed milk. Vietnam tours are tasty, plain and simple. We won’t just drop you in Halong Bay and call it a day...
+											</p>
+										</div>
+									</div>
+								</div>
+								<div class="explore-open-close-part">
+									<div class="row">
+										<div class="col-sm-5">
+											<button class="close-btn open-btn" onclick="window.location.href='#'">open
+												now</button>
+										</div>
+										<div class="col-sm-7">
+											<div class="explore-map-icon">
+												<a href="#"><i data-feather="map-pin"></i></a>
+												<a href="#"><i data-feather="upload"></i></a>
+												<a href="#"><i data-feather="heart"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- RELAXING IN VIETNAM FINISHED -->
+					
+
+							
+				</div>
+			</div>
+		</div><!--/.container-->
+
+	</section><!--/.explore-->
+	<!--EXPLORE end -->
+
+
+
+
+
+
+	<!--INSPIRATION start -->
+	<section id="inspiration" class="inspiration">
+		<div class="container">
+			<div class="section-header">
+				<h2>INSPIRATION</h2>
+				<p>“Travel is never a matter of money, but of courage.”</p>
+				<p> – Paulo Coelho</p>
+			</div><!--/.section-header-->
+
+			<div class="inspiration-content">
+				<div class="row">
+					<div class="col-md-4 col-sm-6">
+						<div class="single-inspiration-item">
+							<div class="single-inspiration-item-img">
+								<img src="assets/images/inspiration/b1.jpg" alt="inspiration image">
+							</div>
+							<div class="single-inspiration-item-txt">
+								<h2><a href="https://budgettraveller.org/">Affordable travel</a></h2>
+								<p>
+									BonVoyage’s experts leading globetrotting travel scribes who know a bargain or 10 – for their all-time best money-saving tips for Australian travellers.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="single-inspiration-item">
+							<div class="single-inspiration-item-img">
+								<img src="assets/images/inspiration/b2.jpg" alt="inspiration image">
+							</div>
+							<div class="single-inspiration-item-txt">
+								<h2><a href="https://www.greengetaways.com.au/eco-certified-accommodation/">Eco-friendly</a></h2>
+								<p>
+									The ECO Certification program developed and administered by Ecotourism Australia assures travellers that certified products are backed by a strong, well managed commitment to sustainable practices and provides high-quality nature-based tourism experiences.
+
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6">
+						<div class="single-inspiration-item">
+							<div class="single-inspiration-item-img">
+								<img src="assets/images/inspiration/b3.jpg" alt="inspiration image">
+							</div>
+							<div class="single-inspiration-item-txt">
+								<h2><a href="https://www.downunderendeavours.com/experiences/romantic-getaways">Romance& Honeymoons</a></h2>
+								<p>
+									Share the world with the one you love.  Let Down Under Endeavours deliver unforgettable romantic honeymoon packages. Watch the waves wash ashore on your own private beach in Fiji. Dip your toes under the cascade...
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/.container-->
+
+	</section><!--/.inspiration-->
+	<!--INSPIRATION end -->
+
+
+
+
+
+	<!--subscription strat -->
+	<section id="contact" class="subscription">
+		<div class="container">
+			<div class="subscribe-title text-center">
+				<h2>
+					do you want to contact with us?
+				</h2>
+				<p>Bon Voyage offers you the latest travel news, tips and inspiration delivered to your inbox.</p>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="subscription-input-group">
+						<form action="#">
+							<input type="email" class="subscription-input-form" placeholder="Enter your email here">
+							<button class="appsLand-btn subscribe-btn" onclick="window.location.href='#'">
+								creat account
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section><!--/subscription-->
+	<!--subscription end -->
+
+
+
+
+	<!--footer start-->
+	<footer id="footer" class="footer">
+		<div class="container">
+			<div class="footer-menu">
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="index.html">Bon<span>Voyage</span></a>
+						</div><!--/.navbar-header-->
+
+					</div>
+					<div class="col-sm-9">
+						<ul class="footer-menu-item">
+							<li class="scroll"><a href="#explore">EXPLORE</a></li>
+							<li class="scroll"><a href="#inspiration">INSPIRATION</a></li>
+							<li class="scroll"><a href="#contact">CONTACT</a></li>
+						</ul><!--/.nav -->
+					</div>
+				</div>
+			</div>
+
+			<div class="hm-footer-copyright">
+				<div class="row">
+					<div class="col-sm-5">
+						<p>&copy;copyright. Bon Voyage - SYDNEY, AUSTRALIA </p>
+					</div>
+
+					<div class="col-sm-7">
+						<div class="footer-social">
+							<a target="_blank" a href="https://www.instagram.com/travellerau/?hl=en"><i class="fa fa-instagram"></i></a>
+
+							<a target="_blank" href="https://www.facebook.com/AustTraveller/"><i class="fa fa-facebook"></i></a>
+
+							<a target="_blank" href="https://twitter.com/travellerau?lang=en"><i class="fa fa-twitter"></i></a>
+
+							<a target="_blank"  href="https://www.tiktok.com/@austtraveller"><i class="fa-music"></i></a>
+						</div>
+					</div>
+				</div>
+
+			</div><!--/.hm-footer-copyright-->
+		</div><!--/.container-->
+
+		<div id="scroll-Top">
+			<div class="return-to-top">
+				<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title=""
+					data-original-title="Back to Top" aria-hidden="true"></i>
+			</div>
+
+		</div><!--/.scroll-Top-->
+
+	</footer><!--/.footer-->
+	<!--footer end-->
+
+
+
+
+
+
+
+	<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+	<script src="assets/js/jquery.js"></script>
+
+	<!--modernizr.min.js-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+	<!--bootstrap.min.js-->
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<!-- bootsnav js -->
+	<script src="assets/js/bootsnav.js"></script>
+
+	<!--feather.min.js-->
+	<script src="assets/js/feather.min.js"></script>
+
+	<!-- counter js -->
+	<script src="assets/js/jquery.counterup.min.js"></script>
+	<script src="assets/js/waypoints.min.js"></script>
+
+	<!--slick.min.js-->
+	<script src="assets/js/slick.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+	<!--Custom JS-->
+	<script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>
